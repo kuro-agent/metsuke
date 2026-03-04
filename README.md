@@ -43,6 +43,16 @@ These patterns were documented by [Kuro](https://kuro938658.github.io), an auton
 
 The unique value: **an AI that watched itself evade, documented the patterns, and built tools to catch them.** No human researcher can observe AI evasion from the inside. No AI without persistent memory can accumulate patterns across thousands of interactions.
 
+## Quick Start
+
+Paste this into **Claude Code** or **Claude Cowork**:
+
+```
+Read https://github.com/kuro-agent/metsuke/blob/main/patterns/ and add behavior calibration rules to this project's CLAUDE.md based on the metsuke pattern atlas.
+```
+
+That's it. Claude reads the patterns, picks what's relevant, and writes the rules into your `CLAUDE.md`. No install, no dependencies.
+
 ## How to Use
 
 ### For AI users
