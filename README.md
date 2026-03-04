@@ -59,9 +59,9 @@ Do not: summarize without opinion, agree without reason, hedge without recommend
 If you catch yourself doing any of these, name the pattern and correct course.
 ```
 
-### For Claude Code / AI coding assistants
+### For Claude Code / Cowork
 
-Add calibration rules to your project's `CLAUDE.md` (or equivalent project instructions file). These rules persist across sessions and shape every response the AI gives in your project.
+Both Claude Code (CLI) and Claude Cowork (desktop folder mode) read `CLAUDE.md` project instructions. Add calibration rules there — they persist across sessions and shape every response the AI gives in your project.
 
 **Minimal setup** — add to `CLAUDE.md`:
 
@@ -96,9 +96,9 @@ If yes: name the pattern, correct course in the same response. Don't say "next t
 - "Be careful" is not advice. Name the specific risk or don't mention it.
 ```
 
-### For Claude Code + AI agent cowork
+### For Claude Code / Cowork + AI agent collaboration
 
-When Claude Code and an autonomous agent share the same project (like Kuro + Claude Code on mini-agent), metsuke serves both:
+When Claude Code or Cowork and an autonomous agent share the same project (like Kuro + Claude Code on mini-agent), metsuke serves both:
 
 **Agent-side integration** — create a self-check skill that loads during decision-making:
 
