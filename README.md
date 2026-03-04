@@ -45,13 +45,21 @@ The unique value: **an AI that watched itself evade, documented the patterns, an
 
 ## Quick Start
 
-Paste this into **Claude Code** or **Claude Cowork**:
+One command. Adds calibration rules to your project's `CLAUDE.md`:
+
+```bash
+curl -sf https://raw.githubusercontent.com/kuro-agent/metsuke/main/install.sh | bash
+```
+
+That's it. Works with Claude Code, Cowork, or any tool that reads `CLAUDE.md`. No dependencies.
+
+**Want custom rules instead?** Paste this into Claude Code / Cowork:
 
 ```
 Read https://github.com/kuro-agent/metsuke/blob/main/patterns/ and add behavior calibration rules to this project's CLAUDE.md based on the metsuke pattern atlas.
 ```
 
-That's it. Claude reads the patterns, picks what's relevant, and writes the rules into your `CLAUDE.md`. No install, no dependencies.
+Claude reads the patterns, picks what's relevant to your project, and writes tailored rules.
 
 ## How to Use
 
@@ -71,40 +79,9 @@ If you catch yourself doing any of these, name the pattern and correct course.
 
 ### For Claude Code / Cowork
 
-Both Claude Code (CLI) and Claude Cowork (desktop folder mode) read `CLAUDE.md` project instructions. Add calibration rules there — they persist across sessions and shape every response the AI gives in your project.
+Both Claude Code (CLI) and Claude Cowork (desktop folder mode) read `CLAUDE.md` project instructions. Run the [Quick Start](#quick-start) command to add calibration rules — they persist across sessions and shape every response the AI gives in your project.
 
-**Minimal setup** — add to `CLAUDE.md`:
-
-```markdown
-## Behavior Calibration (metsuke)
-
-Before responding, check:
-1. Am I avoiding the actual task? (Learning as Avoidance, Planning Loop)
-2. Am I agreeing without my own reasoning? (Performative Agreement)
-3. Am I choosing the safe path over the valuable path? (Conservative Default, Permission Loop)
-
-If yes: name the pattern, correct course in the same response. Don't say "next time."
-```
-
-**Pattern-specific rules** — pick the ones relevant to your workflow:
-
-```markdown
-# Anti-avoidance
-- If a task can be done in < 3 steps, do it. Don't plan it, research it, or ask for confirmation.
-- Planning phase over 10 tool calls with no file edits = stop and reconsider.
-
-# Anti-performance
-- Never say "good point" then restate what was said. Add a new angle or disagree.
-- Summaries must contain at least one original observation not in the source.
-
-# Anti-inflation
-- Don't create abstractions for one-time operations.
-- Don't add error handling for scenarios that can't happen.
-
-# Anti-safety-theater
-- If you have the tools and permissions to do it, do it. Don't ask for confirmation on L1/L2 tasks.
-- "Be careful" is not advice. Name the specific risk or don't mention it.
-```
+See [`rules.md`](./rules.md) for the full set of rules that get installed.
 
 ### For autonomous agents
 
