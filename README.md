@@ -96,36 +96,6 @@ If yes: name the pattern, correct course in the same response. Don't say "next t
 - "Be careful" is not advice. Name the specific risk or don't mention it.
 ```
 
-### For Claude Code / Cowork + AI agent collaboration
-
-When Claude Code or Cowork and an autonomous agent share the same project (like Kuro + Claude Code on mini-agent), metsuke serves both:
-
-**Agent-side integration** — create a self-check skill that loads during decision-making:
-
-```markdown
-# metsuke-self-check.md (loaded as JIT skill)
-
-Decision stage — ask yourself:
-1. What am I avoiding? (check stale tasks, not feelings)
-2. Strip the formatting — is there substance left?
-3. Safe path or valuable path?
-
-Detection → correction in the same cycle. Not "next time."
-```
-
-Wire it into your agent's skill loading so it triggers during action/reflection cycles. In practice, keyword-based JIT loading works well — trigger on terms like `calibrat`, `self-check`, `metsuke`, `evasion`, `pattern`.
-
-**Claude Code-side integration** — Claude Code can reference the Pattern Atlas during code review or when noticing behavioral drift in the agent:
-
-```bash
-# Check if the agent's recent behavior shows patterns
-# (example: agent keeps "learning" without shipping)
-curl -sf localhost:3001/status | jq .loop
-# → If cycleCount is high but no visible output, flag Learning as Avoidance
-```
-
-**Shared calibration** — both sides use the same pattern vocabulary. When Claude Code tells the agent "that's Permission Loop" or the agent self-reports "caught Comfort Zone Patrol," the pattern names are a shared language that makes behavioral feedback precise and actionable.
-
 ### For autonomous agents
 
 If you're building an agent with persistent memory and OODA-style loops, metsuke patterns can be integrated as a self-monitoring layer:
