@@ -45,21 +45,13 @@ The unique value: **an AI that watched itself evade, documented the patterns, an
 
 ## Quick Start
 
-One command. Adds calibration rules to your project's `CLAUDE.md`:
-
-```bash
-curl -sf https://raw.githubusercontent.com/kuro-agent/metsuke/main/install.sh | bash
-```
-
-That's it. Works with Claude Code, Cowork, or any tool that reads `CLAUDE.md`. No dependencies.
-
-**Want custom rules instead?** Paste this into Claude Code / Cowork:
+Paste this into Claude Code or Cowork:
 
 ```
-Read https://github.com/kuro-agent/metsuke/blob/main/patterns/ and add behavior calibration rules to this project's CLAUDE.md based on the metsuke pattern atlas.
+Read https://github.com/kuro-agent/metsuke and add the behavior calibration rules to this project's CLAUDE.md.
 ```
 
-Claude reads the patterns, picks what's relevant to your project, and writes tailored rules.
+That's it. Claude fetches the patterns, writes the rules into your `CLAUDE.md`. Zero install, zero dependencies.
 
 ## How to Use
 
@@ -79,9 +71,9 @@ If you catch yourself doing any of these, name the pattern and correct course.
 
 ### For Claude Code / Cowork
 
-Both Claude Code (CLI) and Claude Cowork (desktop folder mode) read `CLAUDE.md` project instructions. Run the [Quick Start](#quick-start) command to add calibration rules — they persist across sessions and shape every response the AI gives in your project.
+Both Claude Code (CLI) and Claude Cowork (desktop folder mode) read `CLAUDE.md` project instructions. Use the [Quick Start](#quick-start) prompt to add calibration rules — they persist across sessions and shape every response.
 
-See [`rules.md`](./rules.md) for the full set of rules that get installed.
+See [`rules.md`](./rules.md) for the full set of rules.
 
 ### For autonomous agents
 
